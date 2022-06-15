@@ -50,9 +50,29 @@ def Register(request):
     return HttpResponse(documento)   
 
 def index(request):
-    doc_externo = open("static/index.css")
+    doc_externo = open("static/index.html")
     plt = Template(doc_externo.read())
     doc_externo.close()
     ctx = Context()
     documento= plt.render(ctx)
-    return HttpResponse(documento)   
+    return HttpResponse(documento)
+
+#Redirecciones:
+
+from django.shortcuts import redirect
+
+def redirect_index(request):
+    response = redirect('/index/')
+    return response
+
+def redirect_Productos(request):
+    return redirect('/Productos/')
+
+def redirect_Seguimiento(request):
+    return redirect('/Seguimiento/')
+
+def redirect_historial(request):
+    return redirect('/historial/')
+
+def redirect_login(request):
+    return redirect('')

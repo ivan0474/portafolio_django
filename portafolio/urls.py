@@ -18,13 +18,22 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+#from .views import redirect_index, redirect_Productos, redirect_historial, redirect_Seguimiento
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.inicio),
-    path('historial/',views.historial),
-    path('Productos/',views.Productos),
-    path('Seguimiento/',views.Seguimiento),
-    path('login/',views.login),
-    path('Register/',views.Register),
-    path('index/',views.index),
-]
+    path('historial/',views.historial, name='historial'),
+    path('Productos/',views.Productos, name='Productos'),
+    path('Seguimiento/',views.Seguimiento, name='Seguimiento'),
+    path('login/',views.login, name='login'),
+    path('Register/',views.Register, name='Register'),
+    path('index/',views.index, name='index'),
+#     path('redirect_index/', redirect_index),
+#     path('redirect_Productos/', redirect_Productos),
+#     path('redirect_historial/', redirect_historial),
+#     path('redirect_Seguimiento/', redirect_Seguimiento)
+ ]
+
+
+
